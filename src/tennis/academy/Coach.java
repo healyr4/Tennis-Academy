@@ -13,7 +13,7 @@ public class Coach {
 	private int id;
 	private int moneyEarned;
 	
-	private Coach(String name, int id, int moneyEarned) {
+	public Coach(String name, int id, int moneyEarned) {
 		this.name = name;
 		this.id = id;
 		this.moneyEarned = moneyEarned;
@@ -36,6 +36,9 @@ public class Coach {
 		return id;
 	}
 	
+    public String toString() {
+        return "Coach: "+ name + " has earned $ " + moneyEarned;         
+    }
 
 }
 

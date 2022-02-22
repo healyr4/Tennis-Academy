@@ -12,24 +12,24 @@ import java.util.ArrayList;
  *
  */
 public class Player {
-	private int studentID;
+	private int playerID;
 	private String name;
 	private int moneyEarned;
 	private int ranking;
 	private int coachContribution;
 	private ArrayList <String> tournamentsPlayed;
 	
-	public Player(int studentID , String name, int ranking) {
-		this.studentID = studentID;
+	public Player(String name , int playerID, int ranking, int moneyEarned) {
+		this.playerID = playerID;
 		this.name = name;
 		this.ranking = ranking;
-		this.moneyEarned = 0;
-		this.coachContribution = 0;
+		this.moneyEarned = moneyEarned;
+		this.coachContribution = (int) (moneyEarned*0.1);
 		this.tournamentsPlayed = new ArrayList<String>();
 	}
 	
-	public int getStudentID() {
-		return studentID;
+	public int getplayerID() {
+		return playerID;
 	}
 	
 
@@ -61,4 +61,13 @@ public class Player {
 	public void setTournamentsPlayed(ArrayList<String> tournamentsPlayed) {
 		this.tournamentsPlayed = tournamentsPlayed;
 	}
+	
+    public String toString() {
+    	if (ranking==0){
+    		return "Player: "+ name + " and has earned $" + moneyEarned;
+    	}
+        return "Player: "+ name + " is ranked " + ranking
+        		+ " has earned $ " + moneyEarned;
+                
+    }
 }
